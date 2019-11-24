@@ -1,0 +1,39 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dodaj aktora</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">Strona główna</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+</head>
+<body>
+
+<form action="#" th:action="@{/actor}" th:object="${actor}" method="post">
+    <div class="form-row">
+        <div class="col-md-4 mb-3">
+            <label>Imię:</label>
+            <input type="text" th:field="*{primaryName}" class="form-control"
+                   placeholder="Imię:" required>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label>Rok urodzenia:</label>
+            <input type="number" th:field="*{birthYear}" class="form-control"
+                   placeholder="Rok urodzenia:" required>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label>Rok śmierci:</label>
+            <input type="number" th:field="*{deathYear}" class="form-control"
+                   placeholder="Rok śmierci:" required>
+        </div>
+        <div>
+            <button class="btn btn-success" type="submit">Wprowadź</button>
+            <button class="btn btn-danger" type="reset">Wyczyść</button>
+        </div>
+    </div>
+</form>
+</body>
+</html>

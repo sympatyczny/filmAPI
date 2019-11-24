@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Actors List</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--<a class="btn btn-info" href="#" th:href="@{/}"> powrót do strony głównej </a>-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">Strona główna</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+</head>
+<body>
+
+<table class="table">
+<thead class="thead-dark">
+<tr>
+    <th scope="col">Primary Name</th>
+    <th scope="col">Birth Year</th>
+    <th scope="col">Death Year</th>
+</tr>
+</thead>
+<tbody>
+<tr th:each="actor : ${actors}">
+
+    <td><span th:text="${actor.primaryName}"> primaryName </span></td>
+    <td><span th:text="${actor.birthYear}"> birthYear </span></td>
+    <td><span th:text="${actor.deathYear}"> deathYear </span></td>
+
+</tr>
+</tbody>
+</table>
+</body>
+</html>
